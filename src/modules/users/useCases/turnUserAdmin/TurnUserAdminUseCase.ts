@@ -14,7 +14,7 @@ class TurnUserAdminUseCase {
   execute({ user_id }: IRequest): User {
     const user = this.usersRepository.findById(user_id);
     if (!user) {
-      throw new Error("User doesn't exists!");
+      throw new Error("User does not exists");
     }
     const updatedUser = this.usersRepository.turnAdmin(user);
     return updatedUser;
